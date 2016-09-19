@@ -6,8 +6,8 @@ from datetime import datetime
 from aiohttp import web
 
 def index(request):
-    return web.Response(body=bytes('<h1>ÄãºÃ</h1>', encoding='utf-8') ,headers={'Content-Type':'text/html;charset=utf-8'})
-
+    return web.Response(body=bytes('<h1>ä½ å¥½</h1>', encoding='utf-8'), headers={'Content-Type':'text/html;charset=utf-8'})
+    
 @asyncio.coroutine
 def init(loop):
     app = web.Application(loop=loop)
