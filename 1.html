@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div id="d1" style="width:100%;border:1px solid red;height:20px;">
+<body>
+<script>
+function fixRight(num, length) {
+  return ('' + num).length < length ? ((new Array(length + 1)).join('0') + num).slice(-length) : '' + num;
+}
+var newDiv =  document.createElement("div");
+newDiv.id="div1";
+newDiv.style.cssText="position: absolute; top: 5px; right: 10px; color: red; font-size: 10pt;";
+document.body.appendChild(newDiv);
+
+var i = 0;
+function test(){
+  i=i+1;
+if(i > 100)
+  location.href=location.href;
+  var divSel = document.getElementById('div1');
+  divSel.innerText = "无操作时间： "+fixRight(parseInt( i/60),2)+" 分 "+fixRight(( i%60),2)+" 秒";
+}
+  window.setInterval("test()",1000);  
+document.onmousemove=function(){
+  i=0;
+}
+</script>
+</html>
